@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fileupload</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class = "container is-blue" style = "padding: 4.22rem;" >
+    <div class="hero hero-link">
+    <h3 class="title is-3 has-text-centered">Rails File upload Resume</h3>
+    <h3 class="subtitle is-5 has-text-centered">A Rails document uploader App
+      on <b>Carrierwave</b> gem build in with rails, 
+      Knows how to handle the whole uploaded file structer. To store your daily drivers securely.
+     </h3>
+    </div>
+        <%= yield %>
+ </div>
+
+  </body>
+</html>

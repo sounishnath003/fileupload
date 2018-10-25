@@ -1,0 +1,76 @@
+<% if !@resume.errors.empty? %>
+  <div class="message is-warning" >
+    <h3 class="title is-3 is-danger">Errors!</h3>
+    <ul>
+      <% @resume.errors.full_messages.each do |msg| %>
+        <li class="list is-danger">
+          <%= msg %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<section-- class="section">
+  <%= form_for @resume, html: { multipart: true } do |f| %>
+ 
+ <div class="field">
+    <div class="control">
+        <%= f.label :name, input_html: { class: "subtitile label-name" } %> 
+        <br> <br> 
+        <%= f.text_field :name, required: false, input_html: { class: "input is-danger"}, wrapper: false, label_html: { class: "label" } %>
+    </div>
+ </div>
+ <br>
+ <div class="field">
+    <div class="control">
+        <%= f.label :attachment %> 
+        <br> <br> 
+        <%= f.file_field :attachment, input_html:{class: "input is-primary"}, wrapper: false, label_html: {class: "label"} %>
+    </div>
+ </div>
+ <br><br>
+
+<div class="level">
+    <div class="level-left">
+        <div class="buttons">
+                    <div class="field">
+                        <div class="control">
+                            <%= f.submit "Save", class: "button is-link is-medium" %>
+                        </div>
+                    </div>
+
+    <hr>
+            <div class="field">
+                <div class="control">
+                    <%= link_to "Back", main_app.root_path, class: "button is-primary is-medium" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <% end %>
+ 
+    </div>
+ </div>
+ <br><br>
+ <!--div class="field">
+    <div class="control">
+        <%= link_to "Back", main_app.root_path, class: "button is-secondary is-medium" %>
+    </div>
+ </div-->
+
+<style>
+   .buttons:last-child {
+    margin-bottom: -2.5rem;
+    top: 0;
+    bottom: 0;
+}
+
+    hr {
+        width: 6em;
+        height: 0;
+    }
+</style>
+</section>

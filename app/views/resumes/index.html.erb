@@ -1,0 +1,35 @@
+<% if !flash[:notice].blank? %>
+ <div class = "message is-danger" style="padding: 2em; " >
+ <%= flash[:notice] %>
+ </div>
+<% end %>
+
+
+<br />
+<%= link_to "New Resume", new_resume_path, class: "button is-link" %>
+<br />
+<br />
+
+<table class = "table is-fullwidth is-hoverable is-striped" style=" padding: 2.23em 2.33em; ">
+ <thead>
+ <tr>
+ <th>Name</th>
+ <th>Download Link</th>
+ <th> </th>
+ </tr>
+ </thead>
+
+ <tbody>
+ <% @resumes.each do |resume| %>
+
+ <tr>
+ <td><%= resume.name %></td>
+ <td><%= link_to "Download Resume", resume.attachment_url %></td>
+ <td><%= button_to "Delete", resume, method: :delete, class: "button is-block is-danger",
+confirm: "Are you sure that you wish to delete #{resume.name}?" %></td>
+ </tr>
+
+ <% end %>
+ </tbody>
+
+</table>
