@@ -12,14 +12,15 @@
 <% end %>
 
 
+<div class="container is-5 is-centered">
 <section-- class="section">
-  <%= form_for @resume, html: { multipart: true } do |f| %>
+  <%= simple_form_for @resume, html: { multipart: true } do |f| %>
  
  <div class="field">
     <div class="control">
         <%= f.label :name, input_html: { class: "subtitile label-name" } %> 
         <br> <br> 
-        <%= f.text_field :name, required: false, input_html: { class: "input is-danger"}, wrapper: false, label_html: { class: "label" } %>
+        <%= f.input :name, required: false, input_html: { class: "input is-danger", style: "max-width: 380px;" }, wrapper: false, label_html: { class: "label" } %>
     </div>
  </div>
  <br>
@@ -27,7 +28,7 @@
     <div class="control">
         <%= f.label :attachment %> 
         <br> <br> 
-        <%= f.file_field :attachment, input_html:{class: "input is-primary"}, wrapper: false, label_html: {class: "label"} %>
+        <%= f.file_field :attachment, class: "input" , style: " padding: 1em 1.66em; border:0; height:0; max-width: 320px; backgroung:transparent;", wrapper: false, label_html: {class: "label"} %>
     </div>
  </div>
  <br><br>
@@ -74,3 +75,5 @@
     }
 </style>
 </section>
+
+</div>

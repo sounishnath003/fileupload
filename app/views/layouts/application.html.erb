@@ -10,16 +10,64 @@
   </head>
 
   <body>
-    <div class = "container is-blue" style = "padding: 4.22rem;" >
-    <div class="hero hero-link">
-    <h3 class="title is-3 has-text-centered">Rails File upload Resume</h3>
-    <h3 class="subtitle is-5 has-text-centered">A Rails document uploader App
-      on <b>Carrierwave</b> gem build in with rails, 
-      Knows how to handle the whole uploaded file structer. To store your daily drivers securely.
-     </h3>
+
+  <div class="container" >
+    <% if flash[:notice] %>
+    <div class="message is-link" style="padding: 1rem;" >
+       <p class="notice">
+       <%= notice %>
+       </p>
     </div>
-        <%= yield %>
+      <% if flash[:alert] %>
+        <div class="message is-danger" style="padding: 1rem;" >
+            <p class="notice">
+              <%= notice %>
+       </p>
+    </div>
+      <% end %>
+  <% end %>
+
+
+  <% if user_signed_in? %>
+    <div class = "container is-blue" style = "padding: 4.22rem;" >
+        <div class="hero hero-link">
+            <h3 class="title is-3 has-text-centered">Rails File upload Resume</h3>
+                <h3 class="subtitle is-5 has-text-centered">A Rails document uploader App
+                  on <b>Carrierwave</b> gem build in with rails, 
+                  Knows how to handle the whole uploaded file structer. To store your daily drivers securely.
+                </h3>
+
+                <h4 class="subtitle is-5 has-text-centered"> Welcome <%= current_user.email %>😘💕</h4>
+        </div>
  </div>
 
+    <% else %>
+
+      <!--div class="level">
+        <div class="level-left">
+          <%= link_to "Sign In", new_user_session_path, class:"button is-warning is-medium" %>
+        </div>
+        <div class="level-right">
+          <%= link_to "Sign up", new_user_registration_path, class:"button is-link is-medium"%>
+        </div>
+      </div-->
+
+
+  <% end %>
+
+      <%= yield %>
+  </div>
+  
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

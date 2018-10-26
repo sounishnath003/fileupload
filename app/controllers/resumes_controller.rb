@@ -1,10 +1,12 @@
 class ResumesController < ApplicationController
+  before_action :authenticate_user!, :except => [:home]
+
   def index
- @resumes = Resume.all
+ @resumes = Resume.all.order("created_at ASC")
  end
 
  def new
- @resume = Resume.new
+ @resume = current_user.resumes.build  #Resume.new(resume_params)
  end
 
 def back
@@ -12,7 +14,8 @@ def back
 end
 
  def create
- @resume = Resume.new(resume_params)
+ @resume =  current_user.resumes.build(resume_params)
+ @user = current_user
 
  if @resume.save
  redirect_to resumes_path, notice: "The resume #{@resume.name} has been uploaded."
@@ -30,7 +33,7 @@ end
 
  private
  def resume_params
- params.require(:resume).permit(:name, :attachment)
+ params.require(:resume).permit(:user_id, :name, :attachment)
  end
 
 end
