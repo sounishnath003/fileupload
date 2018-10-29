@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
 
   <body>
@@ -52,12 +53,26 @@
         </div>
       </div-->
 
+      <div class="container is-centered has-text-right">
+        <div class="block" >
+          <i class="fa fa-google icons-2x" style="color: #ff4900ab;"></i>
+          <i class="fa fa-dribbble icon-3x" style="color: #9621dc;" ></i>
+          <i class="fa fa-github icon-4x" style="color: black;"></i>
+        </div>
+      </div>
 
   <% end %>
+    
 
       <%= yield %>
   </div>
-  
+
+    <style>
+        .fa{
+          padding: 0.444em 0.556em;
+          font-size: 1.33em;
+        }
+    </style>
   </body>
 </html>
 

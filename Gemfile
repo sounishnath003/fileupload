@@ -31,7 +31,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'carrierwave'
 gem 'bulma-rails'
-
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
