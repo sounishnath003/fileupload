@@ -7,8 +7,6 @@ class ResumesController < ApplicationController
 
  def new
   @resume = current_user.resumes.build  #Resume.new(resume_params)
-  @u = current_user.resume_id
-  #@u = Resume.find(params[:id])
  end
 
 def back
@@ -18,8 +16,6 @@ end
  def create
   
   if user_signed_in?
-    @u = current_user.resume_id
-    #@u = Resume.find(params[:id])
     @resume =  current_user.resumes.build(resume_params)
   end
 
