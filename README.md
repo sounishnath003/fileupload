@@ -1,24 +1,23 @@
-# README
+# Planning application
+ 1. Questions
+    - what i am building?
+    - for who i'am building?
+    - what features do i need to have?
+1. User resume.
+2. Model out data.
+3. Think through app UI.  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Modeling out data
+    ### Name:string
+    ### Content:file_field (rails convention)
 
-Things you may want to cover:
+# Think through App UI
+    - The ui must be sweet and simple.
+    - The app must have login system.
+    - If we update the app through 'OmniAuth' it will be best fit.
+    - SPA(single page application) will be the main focus.
 
-* Ruby version
+# footer
+    ### this is by Sounish Nath, I'm a student, learing day by day rails app.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+    
